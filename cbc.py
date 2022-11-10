@@ -1,3 +1,5 @@
+# Patrick Canto de Carvalho - 201935026
+
 import math
 
 from feistel import encrypt_decrypt_text, xor
@@ -17,9 +19,7 @@ def run_cbc(text_bytes):
         cypher_output = encrypt_decrypt_text(xor_output, key.to_bytes(8, "big"), False)  # encripta resultado do xor
         result.append(cypher_output)                                                     # adiciona ao resultado final
         next_xor_input = cypher_output                                                   # próxima entrada do xor será o resultado desta iteração
-        #print(text_bytes[i*8:(i+1)*8])
 
-    #print(b''.join(result))
     return b''.join(result)
 
 
@@ -34,15 +34,15 @@ def run_cbc_decrypt(encrypted_input):
         xor_output = xor(next_xor_input, cypher_output)
         result.append(xor_output)
         next_xor_input = input_block
-        #print(text_bytes[i*8:(i+1)*8])
 
-    #print(b''.join(result).decode("UTF-8"))
     return b''.join(result).decode("UTF-8")
 
 
 input_text = "segurança em sistemas de computação"
 text_bytes = input_text.encode("UTF-8")
+print(f"Entrada (literal de bytes): {text_bytes}\n")
+
 encypted = run_cbc(text_bytes)
-print(f"Chave: {hex(key)}\nIV: {hex(IV)}\nEncriptado:\n{encypted}\n")
-decrypted = run_cbc_decrypt(encypted)
-print(f"Decriptado: {decrypted}")
+print(f"Chave: {hex(key)}\nIV: {hex(IV)}\nEncriptado (literal de bytes):\n{encypted}\n")
+#decrypted = run_cbc_decrypt(encypted)
+#print(f"Decriptado: {decrypted}")

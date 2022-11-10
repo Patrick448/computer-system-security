@@ -4,8 +4,8 @@ import math
 
 from feistel import encrypt_decrypt_text, xor
 
-IV = 0xa4439ccd729248b5     # hexadecimal aleatório
-key = 0xd08044e0d9bf7565    # hexadecimal aleatório
+IV = 0xa4439ccd729248b5     # hexadecimal aleatório de 64bits
+key = 0xd08044e0d9bf7565    # hexadecimal aleatório de 64bits
 
 
 def run_cbc(text_bytes):

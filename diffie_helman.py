@@ -1,7 +1,7 @@
 # Patrick Canto de Carvalho - 201935026
 
-p = 23
-g = 5
+p = 64151
+g = 64483
 
 
 class User:
@@ -15,10 +15,10 @@ class User:
 
 
 alice = User()
-alice.private_key = 6
+alice.private_key = 6405
 
 bob = User()
-bob.private_key = 15
+bob.private_key = 1566
 
 alice_public_key = alice.get_public_key()
 bob_public_key = bob.get_public_key()

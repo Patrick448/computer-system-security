@@ -1,3 +1,5 @@
+# Patrick Canto de Carvalho - 201935026
+
 p = 23
 g = 5
 

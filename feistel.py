@@ -20,12 +20,16 @@ def rotate(byte_array):
 
 def f(bytes, key):
     result = int.from_bytes(bytes, 'big') & int.from_bytes(key, 'big')
+    result = 1
+    for byte in bytes:
+        result *= byte
+    #print(f"bytes: {bytes} : {len(bytes)} : {result}")
     return result.to_bytes(4, 'big')
 
 
 def xor(byte_array1, byte_array2):
     result = int.from_bytes(byte_array1, 'big') ^ int.from_bytes(byte_array2, "big")
-    return result.to_bytes(4, 'big')
+    return result.to_bytes(len(byte_array1), 'big')
 
 
 def run_round(byte_array, key):
